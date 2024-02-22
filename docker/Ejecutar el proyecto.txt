@@ -1,0 +1,56 @@
+Como usar docker con vue3:
+
+---------------------------------------------
+
+Requisitos minimos:
+	Tener instalado docker
+	Iniciar docker
+	CMD
+	Para ejecutar el proyecto rapidamente, bajarse el aqui el .tar:
+	https://drive.google.com/file/d/1OMKhglrS8NM_dzg9HQqSKuYMVxrlMl7y/view?usp=sharing
+		
+
+
+1. Ejecutar el servidor abriendo el puerto 
+docker run -p 5000:8080 vue-app
+
+---------------------------------------------
+
+2. Pegar el link en el navegador:
+http://localhost:5000
+
+---------------------------------------------
+
+extra:
+
+///// //// ////
+
+Esto ya lo hice pero en caso de querer mejorarlo para un CI/CD lo dejo por las dudas.
+
+a. Configurar Dockerfile y .dockerignore
+
+.dockerignore:
+.dockerignore
+Dockerfile
+node_modules
+.vscode
+
+
+Dockerfile:
+
+FROM node:lts-alpine
+RUN npm install -g http-server
+RUN mkdir /app
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+RUN npm run build
+EXPOSE 8080
+CMD [ "http-server", "dist" ]
+
+
+---------------------------------------------
+
+b. Hacer el build de la imagen, en este caso llamada vue-app
+docker build -t vue-app . 

@@ -1,0 +1,21 @@
+Ejecutar la app en Vue3 a traves de docker:
+
+Requisitos minimos:
+	Tener instalado docker
+	Iniciar docker
+	CMD
+
+Esto "vue-app.tar" es la imagen en un comprimido
+entonces tenemos que cargar la aplicacion a través de este comando, dicho comprimido debe estar en la misma ubicación de donde se lanza el comando. (Revisar por ejemplo con pwd o dir)
+
+1. Importamos la imagen
+
+docker load < vue-app.tar
+
+2. Ejecutar el servidor abriendo el puerto 
+
+docker run -p 5000:8080 vue-app
+
+3. Pegar el link en el navegador:
+
+http://localhost:5000

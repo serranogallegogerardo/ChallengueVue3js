@@ -1,0 +1,11 @@
+Como usar docker con exportacion de imagen:
+
+1.Construimos la imagen a partir de los archivos de la carpeta raiz
+
+docker build -t vue-app .
+
+2. Vemos que nombre tiene la imagen que queremos exportar
+docker images
+
+3. exportamos la imagen a un nombre-imagen.tar
+docker save vue-app > vue-shoes.tar

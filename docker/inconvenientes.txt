@@ -1,0 +1,22 @@
+Intente integrar jest a traves de vue cli
+pero al parecer por algun error de compatibilidad entre librerias o alguna deprecada he podido hacer correr los test por lo menos no en el plazo estipulado
+
+Aqui algunas de las librerias que probe:
+npm install -g @vue/cli
+vue add unit-jest
+npm install --save-dev jest @vue/test-utils
+npm install --save-dev jest
+npm install --save-dev jest-environment-jsdom
+vue add @vue/unit-mocha
+
+Esto es para probar los componentes como PaymentForm.vue Carrousel.vue entre otros para testear su correcto funcionamiento
+
+que tiene que ver esto con CI/CD de gitlab? que el CI/CD en gitlab se compone por 
+build - test - deploy
+build: funciona pero no tiene sentido implementarlo sin el test ya que no cumpliria los principios de CI/CD
+test: todavia sin integrarse debo solucionar este error 
+deploy: planeaba hacerlo en netlify ya que se comporta bien con docker de el framework Vue3.
+
+Con esta herramientas se podria hacer un CI/CD y Gitlab
+
+De esta forma estariamos haciendo un commit > luego gitlab se encargaria a traves del .yml para asi no tenes que dockerizar y subir a mano constantemente a la hora de hacer los deploys, logrando asi un flujo correcto CI/CD
