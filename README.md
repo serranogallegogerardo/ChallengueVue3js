@@ -1,4 +1,4 @@
-Capsula Challenge - App "vueShoes"
+Challenge - App "vueShoes"
 ==================================
 
 Descripción
